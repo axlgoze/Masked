@@ -1,0 +1,58 @@
+/* Vintage Styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f1ea;
+    color: #5a4632;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    background: linear-gradient(135deg, #e4d5c7, #cbb59c);
+    border: 2px solid #5a4632;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+.card__holder {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: block;
+    text-align: center;
+}
+
+.car__input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.car__input{
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #5a4632;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #5a4632;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.car__input--card {
+    width: 18ch;
+}
+.car__input--date{
+    width: 5ch;
+}
+.car__input--cvv{
+    width: 3ch;
+}
+
+.car__input--card:focus, .car__input--date:focus, .car__input--cvv:focus {
+    box-shadow: 0 0 5px #5a4632;
+}
