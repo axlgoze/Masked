@@ -19,18 +19,30 @@ function applyMask(inputElement,mask){
     });
 }
 
-function handleInput(mask,pressedKey,formattedInput){
-    if (!/^\d$/.test(pressedKey) && pressedKey !== "Backspace") return;
+function handleInput(mask, pressedKey, formattedInput){
+    if (pressedKey === "Backspace") {
+        if(formattedInput.length === 0) return;
 
-    if (pressedKey <= "9" && pressedKey >= "0") {
-        if (formattedInput.length + 1 <= mask.length) {
-            if (mask[formattedInput.length] === "-" || mask[formattedInput.length] === "/") {
-                formattedInput.push(mask[formattedInput.length],pressedKey)
-            }else{
-                formattedInput.push(pressedKey);
-            }
+        const lastItem = formattedInput[formattedInput.length - 1];
+        if (lastItem === "-" || lastItem === "/") {
+            formattedInput.pop();
         }
+        formattedInput.pop();
+        return;
     }
+
+    if (!/^\d$/.test(pressedKey)) return;
+
+    if (formattedInput.length < mask.length) {
+        const nextCharInMask = mask[formattedInput.length];
+
+        if (nextCharInMask === "-" || nextCharInMask === "/") {
+            formattedInput.push(nextCharInMask)
+        }
+        formattedInput.push(pressedKey);
+        
+    }
+    
 }
 
 applyMask(inputCard,maskCard);

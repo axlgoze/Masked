@@ -29,7 +29,7 @@ graph TD
 |------------------|-------------------------------------------|----------------------------------------|
 | **index.html**   | Defines the structure of the input fields | Inputs: User data<br>Outputs: DOM     |
 | **main.css**     | Provides vintage-inspired styling         | Inputs: None<br>Outputs: Styled UI    |
-| **main.js**      | Implements input masking logic            | Inputs: Keypress events<br>Outputs: Masked input values |
+| **main.js**      | Implements input masking logic            | Inputs: Keypress events<br>Outputs: Masked input values, including handling backspace functionality |
 
 ---
 
@@ -74,7 +74,7 @@ $ cd inputMasked
 - Submit pull requests with detailed descriptions.
 
 ### Testing
-- Manual Testing: Interact with the input fields and verify masking functionality.
+- Manual Testing: Interact with the input fields and verify masking functionality, including backspace handling.
 - Automated Testing: (Planned) Use testing frameworks to validate input handling.
 
 ---
